@@ -1,0 +1,333 @@
+---
+title: "STA 141A Project"
+author: "James Hizon, Eric Nguyen"
+output: html_document
+---
+
+### Problem 1
+
+```{r, echo = TRUE}
+Project_Well_1 <- read.csv("D:/Mat 167 HW/Project_Well_1.csv",header=TRUE)
+
+Project_Well_2 <- read.csv("D:/Mat 167 HW/Project_Well_2.csv",header = TRUE)
+
+Project_Well_3 <- read.csv("D:/Mat 167 HW/Project_Well_3.csv")
+
+Project_Well_4 <- read.csv("D:/Mat 167 HW/Project_Well_4.csv")
+
+Project_Well_5 <- read.csv("D:/Mat 167 HW/Project_Well_5.csv")
+
+Project_Well_6 <- read.csv("D:/Mat 167 HW/Project_Well_6.csv")
+
+Project_Well_7 <- read.csv("D:/Mat 167 HW/Project_Well_7.csv")
+
+Project_Well_8 <- read.csv("D:/Mat 167 HW/Project_Well_8.csv")
+
+Project_Well_9 <- read.csv("D:/Mat 167 HW/Project_Well_9.csv")
+
+Project_Well_10 <- read.csv("D:/Mat 167 HW/Project_Well_10.csv")
+
+#combined data
+well_combine = rbind(Project_Well_1,Project_Well_2,Project_Well_3,Project_Well_4,Project_Well_5,Project_Well_6,Project_Well_7,Project_Well_8,Project_Well_9,Project_Well_10)
+
+
+```
+
+
+**(1)**
+```{r, echo = TRUE}
+#Linear regression for each individual well
+
+#Well 1
+par(mfrow=c(2,2))
+lr_f1 = lm(Impedance ~ Frequency, data = Project_Well_1)
+lr_v1 = lm(Impedance ~ Voltage, data = Project_Well_1)
+lr_vf1 = lm(Impedance ~ Frequency + Voltage, data = Project_Well_1)
+plot(Impedance ~Frequency,data = Project_Well_1)
+plot(Impedance ~Voltage,data = Project_Well_1)
+summary(lr_f1)
+plot(lr_f1)
+summary(lr_v1)
+plot(lr_v1)
+summary(lr_vf1)
+plot(lr_vf1)
+#Transform Well 1 by 4th root
+Project_Well_1_T = Project_Well_1^(1/4)
+lr_f1_T = lm(Impedance ~ Frequency, data = Project_Well_1_T)
+lr_v1_T = lm(Impedance ~ Voltage, data = Project_Well_1_T)
+lr_vf1_T = lm(Impedance ~ Frequency + Voltage, data = Project_Well_1_T)
+summary(lr_f1_T)
+plot(lr_f1_T)
+summary(lr_v1_T)
+plot(lr_v1_T)
+summary(lr_vf1_T)
+plot(lr_vf1_T)
+
+
+```
+
+
+**(2)**
+```{r, echo = TRUE}
+#Well2
+par(mfrow=c(2,2))
+lr_f2 = lm(Impedance ~ Frequency, data = Project_Well_2)
+lr_v2 = lm(Impedance ~ Voltage, data = Project_Well_2)
+lr_vf2 = lm(Impedance ~ Frequency + Voltage, data = Project_Well_2)
+plot(Impedance ~Frequency,data = Project_Well_2)
+plot(Impedance ~Voltage,data = Project_Well_2)
+summary(lr_f2)
+plot(lr_f2)
+summary(lr_v2)
+plot(lr_v2)
+summary(lr_vf2)
+plot(lr_vf2)
+#Transform Well 2 by 4th root
+Project_Well_2_T = Project_Well_2^(1/4)
+lr_f2_T = lm(Impedance ~ Frequency, data = Project_Well_2_T)
+lr_v2_T = lm(Impedance ~ Voltage, data = Project_Well_2_T)
+lr_vf2_T = lm(Impedance ~ Frequency + Voltage, data = Project_Well_2_T)
+summary(lr_f2_T)
+plot(lr_f2_T)
+summary(lr_v2_T)
+plot(lr_v2_T)
+summary(lr_vf2_T)
+plot(lr_vf2_T)
+
+
+```
+
+**(3)**
+```{r, echo = TRUE}
+#Well3
+par(mfrow=c(2,2))
+lr_f3 = lm(Impedance ~ Frequency, data = Project_Well_3)
+lr_v3 = lm(Impedance ~ Voltage, data = Project_Well_3)
+lr_vf3 = lm(Impedance ~ Frequency + Voltage, data = Project_Well_3)
+plot(Impedance ~Frequency,data = Project_Well_3)
+plot(Impedance ~Voltage,data = Project_Well_3)
+summary(lr_f3)
+plot(lr_f3)
+summary(lr_v3)
+plot(lr_v3)
+summary(lr_vf3)
+plot(lr_vf3)
+#Transform Well 3 by 4th root
+Project_Well_3_T = Project_Well_3^(1/4)
+lr_f3_T = lm(Impedance ~ Frequency, data = Project_Well_3_T)
+lr_v3_T = lm(Impedance ~ Voltage, data = Project_Well_3_T)
+lr_vf3_T = lm(Impedance ~ Frequency + Voltage, data = Project_Well_3_T)
+summary(lr_f3_T)
+plot(lr_f3_T)
+summary(lr_v3_T)
+plot(lr_v3_T)
+summary(lr_vf3_T)
+plot(lr_vf3_T)
+```
+
+
+**(4)**
+```{r, echo = TRUE}
+#Well4
+par(mfrow=c(2,2))
+lr_f4 = lm(Impedance ~ Frequency, data = Project_Well_4)
+lr_v4 = lm(Impedance ~ Voltage, data = Project_Well_4)
+lr_vf4 = lm(Impedance ~ Frequency + Voltage, data = Project_Well_4)
+plot(Impedance ~Frequency,data = Project_Well_4)
+plot(Impedance ~Voltage,data = Project_Well_4)
+summary(lr_f4)
+plot(lr_f4)
+summary(lr_v4)
+plot(lr_v4)
+summary(lr_vf4)
+plot(lr_vf4)
+#Transform Well 4 by 4th root
+Project_Well_4_T = Project_Well_4^(1/4)
+lr_f4_T = lm(Impedance ~ Frequency, data = Project_Well_4_T)
+lr_v4_T = lm(Impedance ~ Voltage, data = Project_Well_4_T)
+lr_vf4_T = lm(Impedance ~ Frequency + Voltage, data = Project_Well_4_T)
+summary(lr_f4_T)
+plot(lr_f4_T)
+summary(lr_v4_T)
+plot(lr_v4_T)
+summary(lr_vf4_T)
+plot(lr_vf4_T)
+```
+
+**(5)**
+```{r, echo = TRUE}
+#Well5
+par(mfrow=c(2,2))
+lr_f5 = lm(Impedance ~ Frequency, data = Project_Well_5)
+lr_v5 = lm(Impedance ~ Voltage, data = Project_Well_5)
+lr_vf5 = lm(Impedance ~ Frequency + Voltage, data = Project_Well_5)
+plot(Impedance ~Frequency,data = Project_Well_5)
+plot(Impedance ~Voltage,data = Project_Well_5)
+summary(lr_f5)
+plot(lr_f5)
+summary(lr_v5)
+plot(lr_v5)
+summary(lr_vf5)
+plot(lr_vf5)
+#Transform Well 5 by 4th root
+Project_Well_5_T = Project_Well_5^(1/4)
+lr_f5_T = lm(Impedance ~ Frequency, data = Project_Well_5_T)
+lr_v5_T = lm(Impedance ~ Voltage, data = Project_Well_5_T)
+lr_vf5_T = lm(Impedance ~ Frequency + Voltage, data = Project_Well_5_T)
+summary(lr_f5_T)
+plot(lr_f5_T)
+summary(lr_v5_T)
+plot(lr_v5_T)
+summary(lr_vf5_T)
+plot(lr_vf5_T)
+```
+
+**(6)**
+```{r, echo = TRUE}
+#Well6
+par(mfrow=c(2,2))
+lr_f6 = lm(Impedance ~ Frequency, data = Project_Well_6)
+lr_v6 = lm(Impedance ~ Voltage, data = Project_Well_6)
+lr_vf6 = lm(Impedance ~ Frequency + Voltage, data = Project_Well_6)
+plot(Impedance ~Frequency,data = Project_Well_6)
+plot(Impedance ~Voltage,data = Project_Well_6)
+summary(lr_f6)
+plot(lr_f6)
+summary(lr_v6)
+plot(lr_v6)
+summary(lr_vf6)
+plot(lr_vf6)
+#Transform Well 6 by 4th root
+Project_Well_6_T = Project_Well_6^(1/4)
+lr_f6_T = lm(Impedance ~ Frequency, data = Project_Well_6_T)
+lr_v6_T = lm(Impedance ~ Voltage, data = Project_Well_6_T)
+lr_vf6_T = lm(Impedance ~ Frequency + Voltage, data = Project_Well_6_T)
+summary(lr_f6_T)
+plot(lr_f6_T)
+summary(lr_v6_T)
+plot(lr_v6_T)
+summary(lr_vf6_T)
+plot(lr_vf6_T)
+```
+
+**(7)**
+```{r, echo = TRUE}
+#Well7
+par(mfrow=c(2,2))
+lr_f7 = lm(Impedance ~ Frequency, data = Project_Well_7)
+lr_v7 = lm(Impedance ~ Voltage, data = Project_Well_7)
+lr_vf7 = lm(Impedance ~ Frequency + Voltage, data = Project_Well_7)
+plot(Impedance ~Frequency,data = Project_Well_7)
+plot(Impedance ~Voltage,data = Project_Well_7)
+summary(lr_f7)
+plot(lr_f7)
+summary(lr_v7)
+plot(lr_v7)
+summary(lr_vf7)
+plot(lr_vf7)
+#Transform Well 7 by 4th root
+Project_Well_7_T = Project_Well_7^(1/4)
+lr_f7_T = lm(Impedance ~ Frequency, data = Project_Well_7_T)
+lr_v7_T = lm(Impedance ~ Voltage, data = Project_Well_7_T)
+lr_vf7_T = lm(Impedance ~ Frequency + Voltage, data = Project_Well_7_T)
+summary(lr_f7_T)
+plot(lr_f7_T)
+summary(lr_v7_T)
+plot(lr_v7_T)
+summary(lr_vf7_T)
+plot(lr_vf7_T)
+```
+
+**(8)**
+```{r, echo = TRUE}
+par(mfrow=c(2,2))
+#Well8
+lr_f8 = lm(Impedance ~ Frequency, data = Project_Well_8)
+lr_v8 = lm(Impedance ~ Voltage, data = Project_Well_8)
+lr_vf8 = lm(Impedance ~ Frequency + Voltage, data = Project_Well_8)
+plot(Impedance ~Frequency,data = Project_Well_8)
+plot(Impedance ~Voltage,data = Project_Well_8)
+summary(lr_f8)
+plot(lr_f8)
+summary(lr_v8)
+plot(lr_v8)
+summary(lr_vf8)
+plot(lr_vf8)
+#Transform Well 8 by 4th root
+Project_Well_8_T = Project_Well_8^(1/4)
+lr_f8_T = lm(Impedance ~ Frequency, data = Project_Well_8_T)
+lr_v8_T = lm(Impedance ~ Voltage, data = Project_Well_8_T)
+lr_vf8_T = lm(Impedance ~ Frequency + Voltage, data = Project_Well_8_T)
+summary(lr_f8_T)
+plot(lr_f8_T)
+summary(lr_v8_T)
+plot(lr_v8_T)
+summary(lr_vf8_T)
+plot(lr_vf8_T)
+```
+
+**(9)**
+```{r, echo = TRUE}
+par(mfrow=c(2,2))
+#Well9
+lr_f9 = lm(Impedance ~ Frequency, data = Project_Well_9)
+lr_v9 = lm(Impedance ~ Voltage, data = Project_Well_9)
+lr_vf9 = lm(Impedance ~ Frequency + Voltage, data = Project_Well_9)
+plot(Impedance ~Frequency,data = Project_Well_9)
+plot(Impedance ~Voltage,data = Project_Well_9)
+summary(lr_f9)
+plot(lr_f9)
+summary(lr_v9)
+plot(lr_v9)
+summary(lr_vf9)
+plot(lr_vf9)
+#Transform Well 9 by 4th root
+Project_Well_9_T = Project_Well_9^(1/4)
+lr_f9_T = lm(Impedance ~ Frequency, data = Project_Well_9_T)
+lr_v9_T = lm(Impedance ~ Voltage, data = Project_Well_9_T)
+lr_vf9_T = lm(Impedance ~ Frequency + Voltage, data = Project_Well_9_T)
+summary(lr_f9_T)
+plot(lr_f9_T)
+summary(lr_v9_T)
+plot(lr_v9_T)
+summary(lr_vf9_T)
+plot(lr_vf9_T)
+```
+
+**(10)**
+```{r, echo = TRUE}
+par(mfrow=c(2,2))
+
+#Well10
+lr_f10 = lm(Impedance ~ Frequency, data = Project_Well_10)
+lr_v10 = lm(Impedance ~ Voltage, data = Project_Well_10)
+lr_vf10 = lm(Impedance ~ Frequency + Voltage, data = Project_Well_10)
+plot(Impedance ~Frequency,data = Project_Well_10)
+plot(Impedance ~Voltage,data = Project_Well_10)
+summary(lr_f10)
+plot(lr_f10)
+summary(lr_v10)
+plot(lr_v10)
+summary(lr_vf10)
+plot(lr_vf10)
+#Transform Well 10 by 4th root
+Project_Well_10_T = Project_Well_10^(1/4)
+lr_f10_T = lm(Impedance ~ Frequency, data = Project_Well_10_T)
+lr_v10_T = lm(Impedance ~ Voltage, data = Project_Well_10_T)
+lr_vf10_T = lm(Impedance ~ Frequency + Voltage, data = Project_Well_10_T)
+summary(lr_f10_T)
+plot(lr_f10_T)
+summary(lr_v10_T)
+plot(lr_v10_T)
+summary(lr_vf10_T)
+plot(lr_vf10_T)
+
+```
+
+
+
+
+
+
+
+
